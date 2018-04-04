@@ -1,0 +1,18 @@
+server:
+  port: 8080
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+spring:
+  datasource:
+    username: root
+    password: 7589014bn
+    url: jdbc:mysql://122.114.245.215:3306/general_leaf
+    driver-class-name: com.mysql.jdbc.Driver
+  application:
+    name: general-leaf
+debug: false
+security:
+  user:
+    name: admin
+    password: admin
