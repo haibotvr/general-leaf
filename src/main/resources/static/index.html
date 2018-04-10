@@ -1,0 +1,85 @@
+<html>
+
+<head>
+<script type="text/javascript" src="jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+    <%
+    //签名
+    String url = request.getScheme()+"://";
+    url+=request.getHeader("host");
+    url+=request.getRequestURI();
+    if(request.getQueryString()!=null){
+        url+="?"+request.getQueryString();
+    }
+
+    Map<String,String> sign = WxUtil.getSign(url);
+    String timestamp = sign.get("timestamp");
+    String nonceStr = sign.get("nonceStr");
+    String jsapi_ticket = sign.get("jsapi_ticket");
+    String signature = sign.get("signature");
+    //String url = sign.get("url");
+
+    %>
+    wx.config({
+            debug: false,
+            appId: <%="'"+WxUtil.APPID+"'"%>,
+        timestamp: <%="'"+timestamp+"'"%>,
+        nonceStr: <%="'"+nonceStr+"'"%>,
+        signature: <%="'"+signature+"'"%>,
+        jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo', 'onMenuShareQZone'] // 功能列表，我们要使用JS-SDK的什么功能
+    });
+
+
+    // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在 页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready 函数中。
+    wx.ready(function(){
+        // 获取"分享到朋友圈"按钮点击状态及自定义分享内容接口
+        wx.onMenuShareTimeline({
+            title: '慧锐通电子书架', // 分享标题
+            link: 'http://www.wrtrd.net/book/',
+            imgUrl: 'http://www.wrtrd.net/book/images/wxbook.jpg' // 分享图标
+        });
+
+
+        // 获取"分享给朋友"按钮点击状态及自定义分享内容接口
+        wx.onMenuShareAppMessage({
+            title: '慧锐通电子书架', // 分享标题
+            desc: '慧锐通产品介绍的电子画册，含数字对讲、模拟对讲、云对讲、智能互联、蓝牙门禁等系统！', // 分享描述
+            link: 'http://www.wrtrd.net/book/',
+            imgUrl: 'http://www.wrtrd.net/book/images/wxbook.jpg', // 分享图标
+            type: 'link' // 分享类型,music、video或link，不填默认为link
+        });
+
+
+        //获取"分享到QQ"按钮点击状态及自定义分享内容接口
+        wx.onMenuShareQQ({
+            title: '慧锐通电子书架', // 分享标题
+            desc: '慧锐通产品介绍的电子画册，含数字对讲、模拟对讲、云对讲、智能互联、蓝牙门禁等系统！', // 分享描述
+            link: 'http://www.wrtrd.net/book/', // 分享链接
+            imgUrl: 'http://www.wrtrd.net/book/images/wxbook.jpg' // 分享图标
+        });
+
+
+        //获取"分享到腾讯微博"按钮点击状态及自定义分享内容接口
+        wx.onMenuShareWeibo({
+            title: '慧锐通电子书架', // 分享标题
+            desc: '慧锐通产品介绍的电子画册，含数字对讲、模拟对讲、云对讲、智能互联、蓝牙门禁等系统！', // 分享描述
+            link: 'http://www.wrtrd.net/book/', // 分享链接
+            imgUrl: 'http://www.wrtrd.net/book/images/wxbook.jpg' // 分享图标
+        });
+
+
+        //获取"分享到QQ空间"按钮点击状态及自定义分享内容接口
+        wx.onMenuShareQZone({
+            title: '慧锐通电子书架', // 分享标题
+            desc: '慧锐通产品介绍的电子画册，含数字对讲、模拟对讲、云对讲、智能互联、蓝牙门禁等系统！', // 分享描述
+            link: 'http://www.wrtrd.net/book/', // 分享链接
+            imgUrl: 'http://www.wrtrd.net/book/images/wxbook.jpg' // 分享图标
+        });
+
+    });
+</script>
+</head>
+<body>
+<h5>hello world</h5>
+</body>
+</html>
