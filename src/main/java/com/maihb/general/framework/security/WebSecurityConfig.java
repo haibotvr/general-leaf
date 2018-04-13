@@ -23,37 +23,37 @@ import java.util.Arrays;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    GeneralService generalService;
+//    @Autowired
+//    GeneralService generalService;
 
     @Bean
     protected BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
-    @Bean
-    public FilterRegistrationBean customCorsFilter(){
-        FilterRegistrationBean registrationBean = new FilterRegistrationBean();
-        registrationBean.setFilter(new CustomCorsFilter());
-        registrationBean.setUrlPatterns(Arrays.asList("/*"));
-        return registrationBean;
-    }
-
-    @Bean
-    public FilterRegistrationBean loginFilter(){
-        FilterRegistrationBean registrationBean = new FilterRegistrationBean();
-        registrationBean.setFilter(new LoginFilter(generalService));
-        registrationBean.setUrlPatterns(Arrays.asList("/login"));
-        return registrationBean;
-    }
-
-    @Bean
-    public FilterRegistrationBean securityFilter(){
-        FilterRegistrationBean registrationBean = new FilterRegistrationBean();
-        registrationBean.setFilter(new SecurityFilter());
-        registrationBean.setUrlPatterns(Arrays.asList("/*"));
-        return registrationBean;
-    }
+//    @Bean
+//    public FilterRegistrationBean customCorsFilter(){
+//        FilterRegistrationBean registrationBean = new FilterRegistrationBean();
+//        registrationBean.setFilter(new CustomCorsFilter());
+//        registrationBean.setUrlPatterns(Arrays.asList("/*"));
+//        return registrationBean;
+//    }
+//
+//    @Bean
+//    public FilterRegistrationBean loginFilter(){
+//        FilterRegistrationBean registrationBean = new FilterRegistrationBean();
+//        registrationBean.setFilter(new LoginFilter(generalService));
+//        registrationBean.setUrlPatterns(Arrays.asList("/login"));
+//        return registrationBean;
+//    }
+//
+//    @Bean
+//    public FilterRegistrationBean securityFilter(){
+//        FilterRegistrationBean registrationBean = new FilterRegistrationBean();
+//        registrationBean.setFilter(new SecurityFilter());
+//        registrationBean.setUrlPatterns(Arrays.asList("/*"));
+//        return registrationBean;
+//    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {

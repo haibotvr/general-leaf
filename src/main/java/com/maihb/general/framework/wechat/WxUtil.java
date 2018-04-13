@@ -9,10 +9,10 @@ import java.util.Map;
 public class WxUtil {
 
     //此处的appid与wx.config 参数appId一致   微信公众账号提供给开发者的信息，以下同理
-    public static String APPID = "1";
+    public static String APPID = "wx39fafaa6c37a77c3";
 
     //同上
-    public static String SECRET = "2";
+    public static String SECRET = "898658065956b8f2f1efe853cf19b6f3";
 
     private static TokenJson getAccessToken(){
 
@@ -21,7 +21,7 @@ public class WxUtil {
             String result = HttpGetRequest.doGet(url);
             log.info("微信服务器获取token:"+result);
             JSONObject rqJsonObject = JSONObject.fromObject(result);
-            TokenJson tokenJson = (TokenJson) JSONObject.toBean(rqJsonObject,TokenJson.class);
+            TokenJson tokenJson = (TokenJson) JSONObject.toBean(rqJsonObject, TokenJson.class);
             return tokenJson;
         } catch (Exception e) {
             e.printStackTrace();
@@ -36,7 +36,7 @@ public class WxUtil {
             String result = HttpGetRequest.doGet(url);
             log.info("微信服务器获取Ticket:" + result);
             JSONObject rqJsonObject = JSONObject.fromObject(result);
-            TicketJson ticket = (TicketJson) JSONObject.toBean(rqJsonObject,TicketJson.class);
+            TicketJson ticket = (TicketJson) JSONObject.toBean(rqJsonObject, TicketJson.class);
             return ticket;
         } catch (Exception e) {
             e.printStackTrace();
@@ -61,21 +61,21 @@ public class WxUtil {
             //时间差
             long differ = (System.currentTimeMillis() - tokenTimeLong) /1000;
             if (WxParams.token == null ||  differ > (tokenExpiresLong - 1800)) {
-                System.out.println("token为null，或者超时，重新获取");
+                log.info("token为null，或者超时，重新获取");
                 TokenJson tokenJson = getAccessToken();
                 if (tokenJson != null) {
-                    WxParams.token = tokenJson.getAccessToken();
+                    WxParams.token = tokenJson.getAccess_token();
                     WxParams.tokenTime = System.currentTimeMillis() + "";
-                    WxParams.tokenExpires = tokenJson.getExpiresIn() + "";
+                    WxParams.tokenExpires = tokenJson.getExpires_in() + "";
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
             TokenJson tokenJson = getAccessToken();
             if (tokenJson != null) {
-                WxParams.token = tokenJson.getAccessToken();
+                WxParams.token = tokenJson.getAccess_token();
                 WxParams.tokenTime = System.currentTimeMillis() + "";
-                WxParams.tokenExpires = tokenJson.getExpiresIn() + "";
+                WxParams.tokenExpires = tokenJson.getExpires_in() + "";
             }
         }
 
@@ -87,12 +87,12 @@ public class WxUtil {
             //时间差
             long differ = (System.currentTimeMillis() - ticketTimeLong) /1000;
             if (WxParams.ticket == null ||  differ > (ticketExpiresLong - 1800)) {
-                System.out.println("ticket为null，或者超时，重新获取");
+                log.info("ticket为null，或者超时，重新获取");
                 TicketJson ticketJson = getTicket(WxParams.token);
                 if (ticketJson != null) {
                     WxParams.ticket = ticketJson.getTicket();
                     WxParams.ticketTime = System.currentTimeMillis() + "";
-                    WxParams.ticketExpires = ticketJson.getExpiresIn() + "";
+                    WxParams.ticketExpires = ticketJson.getExpires_in() + "";
                 }
             }
         } catch (Exception e) {
@@ -101,7 +101,7 @@ public class WxUtil {
             if (ticketJson != null) {
                 WxParams.ticket = ticketJson.getTicket();
                 WxParams.ticketTime = System.currentTimeMillis() + "";
-                WxParams.ticketExpires = ticketJson.getExpiresIn() + "";
+                WxParams.ticketExpires = ticketJson.getExpires_in() + "";
             }
         }
 

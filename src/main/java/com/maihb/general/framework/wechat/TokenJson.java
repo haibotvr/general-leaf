@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class TokenJson {
 
-    private String accessToken;
-    private int expiresIn;
+    private String access_token;
+    private int expires_in;
 
 }

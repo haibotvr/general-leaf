@@ -8,6 +8,6 @@ public class TicketJson {
     private int errcode;
     private String errmsg;
     private String ticket;
-    private String expiresIn;
+    private String expires_in;
 
 }

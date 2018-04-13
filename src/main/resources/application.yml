@@ -1,5 +1,6 @@
 server:
-  port: 8080
+  port: 8990
+  context-path: /general-leaf
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/*.xml

@@ -40,6 +40,7 @@ public class Sign {
         ret.put("nonceStr", nonce_str);
         ret.put("timestamp", timestamp);
         ret.put("signature", signature);
+        ret.put("appId", WxUtil.APPID);
 
         return ret;
     }
