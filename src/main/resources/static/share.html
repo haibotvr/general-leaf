@@ -1,6 +1,8 @@
-<!DOCTYPE HTML>
-<html lang="zh">
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -16,8 +18,8 @@
                 function(data, status){
                     if(data.success){
                         wx.config({
-                                debug: false,
-                                appId: data.data.appId,
+                            debug: false,
+                            appId: data.data.appId,
                             timestamp: data.data.timestamp,
                             nonceStr: data.data.nonceStr,
                             signature: data.data.signature,
@@ -56,6 +58,6 @@
     </script>
 </head>
 <body>
-<h5>hello world</h5>
+
 </body>
 </html>

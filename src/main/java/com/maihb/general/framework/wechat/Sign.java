@@ -18,10 +18,11 @@ public class Sign {
         String signature = "";
 
         //注意这里参数名必须全部小写，且必须有序
-        str = "jsapi_ticket=" + jsapi_ticket +
-                "&noncestr=" + nonce_str +
-                "&timestamp=" + timestamp +
-                "&url=" + url;
+        str = String.format("jsapi_ticket=%s&noncestr=%s&timestamp=%s&url=%s", jsapi_ticket, nonce_str, timestamp, url);
+//        str = "jsapi_ticket=" + jsapi_ticket +
+//                "&noncestr=" + nonce_str +
+//                "&timestamp=" + timestamp +
+//                "&url=" + url;
         try{
             MessageDigest crypt = MessageDigest.getInstance("SHA-1");
             crypt.reset();
