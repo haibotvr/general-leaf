@@ -1,6 +1,6 @@
 package com.maihb.general.framework.web;
 
-import com.maihb.general.framework.enums.Decide;
+import com.maihb.general.framework.enums.DataStatus;
 
 /**
  * business.process.result
@@ -18,19 +18,19 @@ public class ReturnValue<T> {
     }
 
     public static <T> ReturnValue<T> success(){
-        return ReturnValue.<T>newInstance().setCode(Decide.SUCCESS.getValue()).setMessage(Decide.SUCCESS.getName());
+        return ReturnValue.<T>newInstance().setCode(DataStatus.SUCCESS.getValue()).setMessage(DataStatus.SUCCESS.getName());
     }
 
     public static <T> ReturnValue<T> success(T data){
-        return ReturnValue.<T>newInstance().setCode(Decide.SUCCESS.getValue()).setMessage(Decide.SUCCESS.getName()).setData(data);
+        return ReturnValue.<T>newInstance().setCode(DataStatus.SUCCESS.getValue()).setMessage(DataStatus.SUCCESS.getName()).setData(data);
     }
 
     public static <T> ReturnValue<T> error(){
-        return ReturnValue.<T>newInstance().setCode(Decide.ERROR.getValue()).setMessage(Decide.ERROR.getName());
+        return ReturnValue.<T>newInstance().setCode(DataStatus.ERROR.getValue()).setMessage(DataStatus.ERROR.getName());
     }
 
     public static <T> ReturnValue<T> error(T data){
-        return ReturnValue.<T>newInstance().setCode(Decide.ERROR.getValue()).setMessage(Decide.ERROR.getName()).setData(data);
+        return ReturnValue.<T>newInstance().setCode(DataStatus.ERROR.getValue()).setMessage(DataStatus.ERROR.getName()).setData(data);
     }
 
     public Integer getCode() {
@@ -61,7 +61,7 @@ public class ReturnValue<T> {
     }
 
     public boolean isSuccess(){
-        return code.equals(Decide.SUCCESS.getValue());
+        return code.equals(DataStatus.SUCCESS.getValue());
     }
 
     public boolean isError(){

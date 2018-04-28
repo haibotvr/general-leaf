@@ -1,6 +1,5 @@
 server:
   port: 8990
-  context-path: /general-leaf
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
@@ -12,8 +11,9 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
   application:
     name: general-leaf
+  redis:
+    host: 122.114.245.215
+    port: 6379
+    database: 0
+    password:
 debug: false
-security:
-  user:
-    name: admin
-    password: admin
