@@ -1,9 +1,9 @@
 package com.maihb.general.framework.security;
 
 import com.maihb.general.framework.web.ReturnValue;
-import org.springframework.boot.autoconfigure.web.DefaultErrorAttributes;
+import org.springframework.boot.web.reactive.error.DefaultErrorAttributes;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.request.RequestAttributes;
+import org.springframework.web.reactive.function.server.ServerRequest;
 
 import java.util.Map;
 
@@ -11,8 +11,8 @@ import java.util.Map;
 public class LeafErrorAttributes extends DefaultErrorAttributes {
 
     @Override
-    public Map<String, Object> getErrorAttributes(RequestAttributes requestAttributes, boolean includeStackTrace) {
-        Map<String, Object> resultMap = super.getErrorAttributes(requestAttributes, includeStackTrace);
+    public Map<String, Object> getErrorAttributes(ServerRequest request, boolean includeStackTrace) {
+        Map<String, Object> resultMap = super.getErrorAttributes(request, includeStackTrace);
         resultMap.put("code", ReturnValue.error().getCode());
         resultMap.put("success", false);
         return resultMap;
