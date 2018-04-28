@@ -13,7 +13,6 @@ public class WechatMessageController extends BaseController{
 
     @RequestMapping(path = "/selectWechatSign", method = RequestMethod.POST)
     public ReturnValue selectWechatSign(String url){
-        log.info(url);
         return ReturnValue.success(WxUtil.getSign(url));
     }
 
