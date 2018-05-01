@@ -1,4 +1,4 @@
-package com.maihb.general.entity;
+package com.maihb.general.modules.entity;
 
 import java.util.Date;
 

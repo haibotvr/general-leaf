@@ -2,17 +2,17 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.maihb.general.mapper.GeneralUserMapper">
+<mapper namespace="com.maihb.general.modules.mapper.GeneralUserMapper">
 
-    <select id="selectGeneralUsers" resultType="com.maihb.general.entity.GeneralUser">
+    <select id="selectGeneralUsers" resultType="com.maihb.general.modules.entity.GeneralUser">
         select * from general_user
     </select>
 
-    <select id="selectGeneralUser" parameterType="java.lang.Long" resultType="com.maihb.general.entity.GeneralUser">
+    <select id="selectGeneralUser" parameterType="java.lang.Long" resultType="com.maihb.general.modules.entity.GeneralUser">
         select * from general_user where id = #{id}
     </select>
 
-    <insert id="insertGeneralUser" keyProperty="id" useGeneratedKeys="true" parameterType="com.maihb.general.entity.GeneralUser">
+    <insert id="insertGeneralUser" keyProperty="id" useGeneratedKeys="true" parameterType="com.maihb.general.modules.entity.GeneralUser">
         INSERT INTO general_user (admin_username, admin_password, admin_realname, create_time, admin_status)
         VALUES (#{adminUsername}, #{adminPassword}, #{adminRealname}, NOW(), #{adminStatus})
     </insert>

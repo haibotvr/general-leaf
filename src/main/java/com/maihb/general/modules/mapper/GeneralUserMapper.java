@@ -1,6 +1,6 @@
-package com.maihb.general.mapper;
+package com.maihb.general.modules.mapper;
 
-import com.maihb.general.entity.GeneralUser;
+import com.maihb.general.modules.entity.GeneralUser;
 import com.maihb.general.framework.security.LoginRequest;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;

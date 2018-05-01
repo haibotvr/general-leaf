@@ -2,7 +2,7 @@ package com.maihb.general.framework.filter;
 
 import com.maihb.general.framework.kits.JsonUtil;
 import com.maihb.general.framework.security.LoginRequest;
-import com.maihb.general.service.GeneralService;
+import com.maihb.general.modules.service.GeneralService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.filter.OncePerRequestFilter;
 

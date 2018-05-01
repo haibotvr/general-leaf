@@ -1,7 +1,7 @@
-package com.maihb.general.mapper;
+package com.maihb.general.modules.mapper;
 
-import com.maihb.general.entity.TasteFoodCategory;
-import com.maihb.general.entity.TasteFoodCategoryExample;
+import com.maihb.general.modules.entity.TasteFoodCategory;
+import com.maihb.general.modules.entity.TasteFoodCategoryExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

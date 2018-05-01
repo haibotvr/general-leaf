@@ -1,6 +1,6 @@
-package com.maihb.general.service.serviceimpl;
+package com.maihb.general.modules.service.serviceimpl;
 
-import com.maihb.general.service.RedisService;
+import com.maihb.general.modules.service.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;

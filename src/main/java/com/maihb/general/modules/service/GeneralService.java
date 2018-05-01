@@ -1,6 +1,6 @@
-package com.maihb.general.service;
+package com.maihb.general.modules.service;
 
-import com.maihb.general.entity.GeneralUser;
+import com.maihb.general.modules.entity.GeneralUser;
 import com.maihb.general.framework.web.ReturnValue;
 import com.maihb.general.framework.security.LoginRequest;
 

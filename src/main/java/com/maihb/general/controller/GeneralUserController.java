@@ -1,8 +1,8 @@
 package com.maihb.general.controller;
 
-import com.maihb.general.entity.GeneralUser;
+import com.maihb.general.modules.entity.GeneralUser;
 import com.maihb.general.framework.web.ReturnValue;
-import com.maihb.general.service.GeneralService;
+import com.maihb.general.modules.service.GeneralService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;

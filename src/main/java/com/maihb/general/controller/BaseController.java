@@ -1,6 +1,6 @@
 package com.maihb.general.controller;
 
-import com.maihb.general.entity.GeneralUser;
+import com.maihb.general.modules.entity.GeneralUser;
 import com.maihb.general.framework.kits.LeafConstant;
 import com.maihb.general.framework.kits.JsonUtil;
 import org.springframework.web.bind.annotation.ModelAttribute;

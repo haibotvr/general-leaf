@@ -1,4 +1,4 @@
-package com.maihb.general.service;
+package com.maihb.general.modules.service;
 
 public interface RedisService {
 

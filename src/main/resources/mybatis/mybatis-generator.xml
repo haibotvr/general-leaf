@@ -20,7 +20,7 @@
         </javaTypeResolver>
 
         <!--生成Model类存放位置-->
-        <javaModelGenerator targetPackage="com.maihb.general.entity" targetProject="/Users/weihaibo/Downloads/maihb-framework/general-leaf/src/main/java">
+        <javaModelGenerator targetPackage="com.maihb.general.modules.entity" targetProject="/Users/weihaibo/Downloads/maihb-framework/general-leaf/src/main/java">
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
@@ -31,7 +31,7 @@
         </sqlMapGenerator>
 
         <!--生成Dao类存放位置-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.maihb.general.mapper"  targetProject="/Users/weihaibo/Downloads/maihb-framework/general-leaf/src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.maihb.general.modules.mapper" targetProject="/Users/weihaibo/Downloads/maihb-framework/general-leaf/src/main/java">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 
