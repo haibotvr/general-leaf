@@ -105,7 +105,7 @@ public class WxUtil {
             }
         }
 
-        Map<String, String> ret = Sign.sign(WxParams.ticket, url);
+        Map<String, String> ret = WxSign.sign(WxParams.ticket, url);
         log.info("计算出的签名-----------------------");
         for (Map.Entry entry : ret.entrySet()) {
             log.info(entry.getKey() + ", " + entry.getValue());
