@@ -116,7 +116,6 @@ public class HttpGetRequest {
             inputStreamReader.close();
             // 释放资源
             inputStream.close();
-            inputStream = null;
             httpUrlConn.disconnect();
             jsonObject = JSONObject.fromObject(buffer.toString());
         } catch (ConnectException ce) {

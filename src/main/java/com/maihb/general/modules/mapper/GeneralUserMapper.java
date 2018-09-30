@@ -1,7 +1,7 @@
 package com.maihb.general.modules.mapper;
 
-import com.maihb.general.modules.entity.GeneralUser;
 import com.maihb.general.framework.security.LoginRequest;
+import com.maihb.general.modules.entity.GeneralUser;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;

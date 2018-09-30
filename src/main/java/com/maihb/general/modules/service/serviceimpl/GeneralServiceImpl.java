@@ -1,10 +1,10 @@
 package com.maihb.general.modules.service.serviceimpl;
 
-import com.maihb.general.modules.entity.GeneralUser;
-import com.maihb.general.framework.web.ReturnValue;
 import com.maihb.general.framework.annotation.BeanValid;
 import com.maihb.general.framework.kits.JwtHelper;
 import com.maihb.general.framework.security.LoginRequest;
+import com.maihb.general.framework.web.ReturnValue;
+import com.maihb.general.modules.entity.GeneralUser;
 import com.maihb.general.modules.mapper.GeneralUserMapper;
 import com.maihb.general.modules.service.GeneralService;
 import org.springframework.beans.factory.annotation.Autowired;
