@@ -1,12 +1,11 @@
 package com.maihb.general.modules.entity;
 
-import com.maihb.general.framework.abstracts.AbstractUser;
 import lombok.Data;
 
 import java.util.Date;
 
 @Data
-public class GeneralUser extends AbstractUser{
+public class GeneralUser {
 
     private Long id;
 
