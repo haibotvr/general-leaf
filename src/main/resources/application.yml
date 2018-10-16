@@ -6,7 +6,7 @@ mybatis:
 spring:
   datasource:
     username: root
-    password: 7589014bn
+    password: root
     url: jdbc:mysql://122.114.245.215:3306/general_leaf
     driver-class-name: com.mysql.jdbc.Driver
   application:
